@@ -6,34 +6,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class Login {
 	WebDriver driver;
-	@Parameters("browser")
-	@BeforeClass
-	public void setup(String browser) {
-		if(browser.equalsIgnoreCase("chrome")){
-			driver=new ChromeDriver();
-			System.out.println("Chrome is launched");
-		}
-			else if(browser.equalsIgnoreCase("Firefox")) {
-				driver=new FirefoxDriver();
-				System.out.println("Firefox is launched");
-				
-			}
-			else if(browser.equalsIgnoreCase("Edge")) {
-				driver=new EdgeDriver(); 	
-				System.out.println("Edge is launched");
-		}
-		
-		driver.manage().window().maximize();
-		driver.get("https://crm.digitaledify.ai/");
-	}
-		
+
 		@Test
 		public void logintest() {
+			
+			driver= new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get("https://crm.digitaledify.ai/");
 		
 		driver.findElement(By.id("username")).sendKeys("admin");
 		driver.findElement(By.name("password")).sendKeys("admin@!23");
