@@ -12,7 +12,7 @@ public class credentials {
 		
 		WebDriver driver=new ChromeDriver();
 		
-		driver.get("https://crm.skillcapital.ai/");
+		driver.get("https://dev.crm.skillcapital.ai/");
 		
 		driver.manage().window().maximize();
 		
@@ -28,11 +28,7 @@ public class credentials {
 //		WebElement txt_password=driver.findElement(By.name("password"));
 //		txt_password.sendKeys("admin@!23");
 //		
-		WebElement checkbox = driver.findElement(By.cssSelector("input[type='checkbox']"));
-		 if (!checkbox.isSelected()) { 
-		checkbox.click();
-		 }   
-
+	
 		WebElement LoginButton = driver.findElement(By.xpath("//button[text()='Login']"));
 		LoginButton.click();
 }

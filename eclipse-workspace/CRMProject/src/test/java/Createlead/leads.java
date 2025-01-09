@@ -50,11 +50,7 @@ public class leads {
 	        loginButton.click();
 	    }
 
-	    @Test(priority = 4)
-	    public void clickSignupLink() {
-	        // Click on the signup link
-	        WebElement signupLink = driver.findElement(By.xpath("//button[text()='login']"));
-	        signupLink.click();
+	   
 	    }
 	}
-}
+
